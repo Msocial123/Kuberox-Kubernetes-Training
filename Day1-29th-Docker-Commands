@@ -1,0 +1,26 @@
+63  docker images
+   64  docker ps
+   65  docker ps -a
+   66  docker help
+   67  clear
+   68  docker pull ubuntu
+   69  docker images
+   70  docker create ubuntu /bin/bash
+   71  docker ps -a
+   72  docker images
+   73  docker stats
+   74  docker ps -a
+   75  docker start 35bb42d1c0cb
+   76  docker ps
+   77  docker ps -a
+   78  docker create -it --name sample-cont ubuntu /bin/bash
+   79  docker ps
+   80  docker ps -a
+   81  docker start sample-cont
+   82  docker ps
+   83  docker attach sample-cont
+   84  docker ps
+   85  docker start sample-cont
+   86  docker ps
+   87  docker attach sample-cont
+   88  docker ps
