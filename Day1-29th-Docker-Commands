@@ -24,3 +24,12 @@
    86  docker ps
    87  docker attach sample-cont
    88  docker ps
+    92  docker run -it --name sample-web ubuntu /bin/bash
+   93  docker ps
+   94  docker start sample-web
+   95  docker ps
+   96  docker run -td --name web-app ubuntu /bin/bash
+   97  docker ps
+   98  docker exec -it web-app /bin/bash
+   99  docker ps
+
