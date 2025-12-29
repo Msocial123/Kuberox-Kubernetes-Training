@@ -33,3 +33,42 @@
    98  docker exec -it web-app /bin/bash
    99  docker ps
 
+     104  docker run -d --name traqnsaction-app -p 3000:3000 muralisocial123/transaction-app:v1.0.0
+  105  docker ps
+  106  docker inspect traqnsaction-app
+  107  curl 172.17.0.5:3000
+  108  docker ps
+  109  docker pause traqnsaction-app
+  110  docker ps
+  111  docker unpause traqnsaction-app
+  112  docker ps
+  113  docker stop web-app
+  114  docker ps
+  115  docker ps -a
+  116  docker pause traqnsaction-app
+  117  docker ps
+  118  docker restart web-app
+  119  docker ps
+  120  docker stop web-app
+  121  docker ps -a
+  122  docker rm sample-web
+  123  docker rm web-app
+  124  docker ps -a
+  125  docker rm -f sample-web
+  126  docker ps
+  127  docker ps -a
+  128  history
+  129  docker images
+  130  docker rmi ubuntu:latest
+  131  docker ps -
+  132  docker ps
+  133  docker stop sample-cont
+  134  docker images
+  135  docker rmi ubuntu:latest
+  136  docker ps -a
+  137  docker rm $(docker ps -q)
+  138  docker ps -a
+  139  docker rm $(docker ps -aq)
+  140  docker ps
+
+
