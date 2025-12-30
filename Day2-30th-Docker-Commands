@@ -1,0 +1,23 @@
+docker run -td --name webserver -p 8080:80 ubuntu /bin/bash
+
+    2  apt-get update -y
+    3  apt-get install git -y
+    4  apt-get install apache2 -y
+    5  which apache2
+    6  git clone -b master https://github.com/Msocial123/Coursevita-Retail-Project.git
+    7  ls
+    8  cd Coursevita-Retail-Project/
+    9  ls
+   10  cd /var
+   11  ls
+   12  cd www
+   13  ls
+   14  cd html
+   15  ls
+   16  cd /
+   17  ls
+   18  cd Coursevita-Retail-Project/
+   19  cp -r . /var/www/html
+   20  ls
+   21  ls /var/www/html
+   22  history
