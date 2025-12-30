@@ -21,3 +21,264 @@ docker run -td --name webserver -p 8080:80 ubuntu /bin/bash
    20  ls
    21  ls /var/www/html
    22  history
+
+-------
+
+    1  passwd root
+    2  exit
+    3  cd ..
+    4  pwd
+    5  clear
+    6  visudo
+    7  exit
+    8  cd ..
+    9  exit
+   10  visudo
+   11  systemctl daemon-reload
+   12  lsblk
+   13  df -Th
+   14  cd ..
+   15  cd .
+   16  .cd ..
+   17  exit
+   18  ping 8.8.8.8
+   19  ping 8.8.8.8
+   20  init 6
+   21  exit
+   22  ping 190.170.20.1
+   23  ping 8.8.8.8
+   24  apt install openssh-client openssh-server -y
+   25  exec bash
+   26  clear
+   27  nano /etc/ssh/sshd_config
+   28  systemctl restart sshd
+   29  apt update -y
+   30  hostname -I
+   31  bash
+   32  hostnamectl
+   33  hostname
+   34  bash
+   35  ls
+   36  cd snap/
+   37  ls
+   38  exit
+   39  whoami
+   40  ip -br a
+   41  w
+   42  last
+   43  sudo su
+   44  cd /
+   45  sudo su
+   46  cat /etc/os-rele*
+   47  lscpu
+   48  free -h
+   49  df -h
+   50  sudo su
+   51  # Add Docker's official GPG key:
+   52  sudo apt update
+   53  sudo apt install ca-certificates curl
+   54  sudo install -m 0755 -d /etc/apt/keyrings
+   55  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   56  sudo chmod a+r /etc/apt/keyrings/docker.asc
+   57  # Add the repository to Apt sources:
+   58  sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+   59  Types: deb
+   60  URIs: https://download.docker.com/linux/ubuntu
+   61  Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+   62  Components: stable
+   63  Signed-By: /etc/apt/keyrings/docker.asc
+   64  EOF
+   65  sudo apt update
+   66  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   67  docker --version
+   68  docker info
+   69  service docker status
+   70  docker images
+   71  docker ps
+   72  docker ps -a
+   73  docker help
+   74  clear
+   75  docker pull ubuntu
+   76  docker images
+   77  docker create ubuntu /bin/bash
+   78  docker ps -a
+   79  docker images
+   80  docker stats
+   81  docker ps -a
+   82  docker start 35bb42d1c0cb
+   83  docker ps
+   84  docker ps -a
+   85  docker create -it --name sample-cont ubuntu /bin/bash
+   86  docker ps
+   87  docker ps -a
+   88  docker start sample-cont
+   89  docker ps
+   90  docker attach sample-cont
+   91  docker ps
+   92  docker start sample-cont
+   93  docker ps
+   94  docker attach sample-cont
+   95  docker ps
+   96  history
+   97  docker ps
+   98  clear
+   99  docker run -it --name sample-web ubuntu /bin/bash
+  100  docker ps
+  101  docker start sample-web
+  102  docker ps
+  103  docker run -td --name web-app ubuntu /bin/bash
+  104  docker ps
+  105  docker exec -it web-app /bin/bash
+  106  docker ps
+  107  history
+  108  docker ps
+  109  docker run docker images
+  110  docker images
+  111  docker run -d --name traqnsaction-app -p 3000:3000 muralisocial123/transaction-app:v1.0.0
+  112  docker ps
+  113  docker inspect traqnsaction-app
+  114  curl 172.17.0.5:3000
+  115  docker ps
+  116  docker pause traqnsaction-app
+  117  docker ps
+  118  docker unpause traqnsaction-app
+  119  docker ps
+  120  docker stop web-app
+  121  docker ps
+  122  docker ps -a
+  123  docker pause traqnsaction-app
+  124  docker ps
+  125  docker restart web-app
+  126  docker ps
+  127  docker stop web-app
+  128  docker ps -a
+  129  docker rm sample-web
+  130  docker rm web-app
+  131  docker ps -a
+  132  docker rm -f sample-web
+  133  docker ps
+  134  docker ps -a
+  135  history
+  136  docker images
+  137  docker rmi ubuntu:latest
+  138  docker ps -
+  139  docker ps
+  140  docker stop sample-cont
+  141  docker images
+  142  docker rmi ubuntu:latest
+  143  docker ps -a
+  144  docker rm $(docker ps -q)
+  145  docker ps -a
+  146  docker rm $(docker ps -aq)
+  147  docker ps
+  148  history
+  149  docker ps
+  150  docker images
+  151  curl ifconfig.me
+  152  ip a
+  153  ss -tulpn | grep ssh
+  154  sudo ufw allow 3000
+  155  ss -tulpn | grep ssh
+  156  sudo ufw status verbose
+  157  sudo ufw enable
+  158  sudo ufw status verbose
+  159  ss -tulpn | grep ssh
+  160  ls
+  161  touch Dockerfile
+  162  ls
+  163  vi index.html
+  164  ls
+  165  vi index.html
+  166  ls
+  167  > index.html
+  168  vi index.html
+  169  ls
+  170  clear
+  171  docker images
+  172  docker pull nginx
+  173  docker images
+  174  docker pull nginx:stable-alpine3.23
+  175  docker images
+  176  service docker status
+  177  docker ps -a
+  178  clear
+  179  docker run -td --name webserver -p 8080:80 ubuntu /bin/bash
+  180  docker ps
+  181  docker exec -it webserver /bin/bash
+  182  docker ps
+  183  history
+  184  curl ifconfig.me
+  185  sudo ufw status verbose
+  186  docker ps
+  187  docker port e1d521e28b3e
+  188  sudo ufw allow 80
+  189  sudo ufw allow 443
+  190  sudo ufw allow 6443
+  191  sudo ufw allow 30000:32767/tcp
+  192  sudo ufw status verbose
+  193  sudo ufw enable
+  194  sudo ufw status verbose
+  195  sudo ufw allow 8080
+  196  sudo ufw reload
+  197  sudo ufw status verbose
+  198  docker ps
+  199  docker commit first-custom-kuberox:v1.0.0 webserver
+  200  docker commit webserver first-custom-kuberox:v1.0.0
+  201  docker images
+  202  docker run -td --name web-app -p 8081:80 first-custom-kuberox:v1.0.0
+  203  docker ps
+  204  docker port 1ea6c0b0631e
+  205  docker exec -it web-app /bin/bash
+  206  sudo ufw allow 8081
+  207  sudo ufw status verbose
+  208  docker exec -it web-app /bin/bash
+  209  docker images
+  210  docker run -td --name web-app1 -p 8082:80 first-custom-kuberox:v1.0.0
+  211  sudo ufw allow 8082
+  212  sudo ufw reload
+  213  docker exec -it web-app1 /bin/bash
+  214  clear
+  215  git clone https://github.com/Msocial123/Flipkart-Clone.git
+  216  ls
+  217  cd Flipkart-Clone/
+  218  ls
+  219  docker build -t flipkart-clone-kuberox:v1.1.0 .
+  220  docker images
+  221  docker inspect flipkart-clone-kuberox:v1.1.0
+  222  cd ..
+  223  docker images
+  224  docker run -td --name kuberox-cont -p 8083:80 flipkart-clone-kuberox:v1.1.0
+  225  docker ps
+  226  sudo ufw allow 8083
+  227  sudo ufw reload
+  228  sudo ufw status verbose
+  229  docker ps
+  230  docker exec -it kuberox-cont /bin/bash
+  231  cd /var/lib/docker/
+  232  ls
+  233  cd buildkit/
+  234  ls
+  235  cd containerd-overlayfs
+  236  ls
+  237  cd cachemounts/
+  238  ls
+  239  cd /
+  240  ls
+  241  docker images
+  242  docker tag flipkart-clone-kuberox:v1.1.0 muralisocial123/flipkart-clone-kuberox:v1.1.0
+  243  docker images
+  244  docker push muralisocial123/flipkart-clone-kuberox:v1.1.0
+  245  docker login
+  246  docker push muralisocial123/flipkart-clone-kuberox:v1.1.0
+  247  docker images
+  248  git clone https://github.com/Msocial123/maven-web-application.git
+  249  ls
+  250  cd maven-web-application/
+  251  clear
+  252  docker build -t maven-app-java-kuberox:v1.1.0 .
+  253  docker images
+  254  docker run -td --name maven-app -p 8084:8080 maven-app-java-kuberox:v1.1.0
+  255  sudo ufw allow 8084
+  256  sudo ufw reload
+  257  history
+
