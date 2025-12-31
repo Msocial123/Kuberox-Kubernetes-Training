@@ -1,0 +1,62 @@
+  260  service docker status
+  261  clear
+  262  docker ps
+  263  clear
+  264  docker run -it --name A1 -v /data ubuntu /bin/bash
+  265  docker pss
+  266  docker ps
+  267  docker rm A1
+  268  clear
+  269  docker ps -a
+  270  docker images
+  271  cd /var/lib/docker/volumes
+  272  ls
+  273  docker volume ls
+  274  cd ca3f26ad8e7cad38fd4abc96f0ac5f73fd4f819184fa317323cba009e3c9641d
+  275  ls
+  276  cd _data
+  277  ls
+  278  cd /
+  279  docker run -it --name A1 ubuntu /bin/bash
+  280  docker start A1
+  281  docker restart A1
+  282  docker ps
+  283  docker attach A1
+  284  docker rm A1
+  285  docker ps -a
+  286  docker volume ls
+  287  docker run -it --name -v /DevOps A1 ubuntu /bin/bash
+  288  docker run -it --name -v /devOps A1 ubuntu /bin/bash
+  289  docker run -it --name A1 -v /DevOps A1 ubuntu /bin/bash
+  290  docker run -it --name A1 -v /DevOps ubuntu /bin/bash
+  291  clear
+  292  docker volume ls
+  293  docker run -it --name A2 -v mydata:/DevOps ubuntu /bin/bash
+  294  docker volume ls
+  295  cd /var/lib/docker/volumes
+  296  ls
+  297  cd mydata
+  298  l
+  299  ls
+  300  cd _data
+  301  ls
+  302  cd /
+  303  docker volume ls
+  304  ls
+  305  cd home/ubuntu
+  306  cd home
+  307  ls
+  308  cd testuser1
+  309  ls
+  310  clear
+  311  mkdir Murali
+  312  cd Murali
+  313  pwd
+  314  docker run -it --name B1 -v /home/testuser1/Murali:/data ubuntu
+  315  ls
+  316  docker volume ls
+  317  cd ..
+  318  docker start B1
+  319  docker ps
+  320  docker inspect B1
+  321  history
