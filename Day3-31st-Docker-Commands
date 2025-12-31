@@ -60,3 +60,34 @@
   319  docker ps
   320  docker inspect B1
   321  history
+___________________________________________________
+ 263  docker network ls
+  264  clear
+  265  ifconfig
+  266  apt install net-tools
+  267  ifconfig
+  268  brctl show
+  269  apt install bridge-utils
+  270  brctl show
+  271  docker network ls
+  272  docker inpsect bridge
+  273  docker network inpsect bridge
+  274  docker network inspect bridge
+  275  docker run -td --name C1 ubuntu /bin/bash
+  276  docker ps
+  277  docker run -td --name D1 ubuntu /bin/bash
+  278  docker inspect C1
+  279  docker inspect D1
+  280  docker exec -it C1 /bin/bash
+  281  docker network create mynetwork –-subnet=10.0.0.0/16 --gateway=10.0.10.100
+  282  docker network create mynetwork --subnet=10.0.0.0/16 --gateway=10.0.10.100
+  283  docker network ls
+  284  docker run -it --net mynetwork --name E1 ubuntu /bin/bash
+  285  docker network connect bridge E1
+  286  docker inspect E1
+  287  docker ps E1
+  288  docker ps
+  289  docker start E1
+  290  docker network connect bridge E1
+  291  docker inspect E1
+  292  docker attach E1
