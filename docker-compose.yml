@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  flip-clone:
+    image: muralisocial123/flipkart-clone-kuberox:v1.1.0
+    container_name: flip-container 
+    ports:
+      - "8086:80"
+  trans-app: 
+    image: muralisocial123/transaction-app:v1.0.0
+    container_name: trans-cont 
+    ports:
+      - "8087:8080"
+  cart-app: 
+    image: muralisocial123/ust-training-cart:1.1.1
+    container_name: cart-cont 
+    ports:
+      - "3000:3000"
+  digi-bank: 
+    image: muralisocial123/digital-bank:1.1.0
+    container_name: digital-bank 
+    ports:
+      - "4545:4545"
+    
+    
+    
