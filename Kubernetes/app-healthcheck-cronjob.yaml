@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fitness-app-healthcheck
+spec:
+  schedule: "*/5 * * * *"   # Every 5 minutes
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 2
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: curl
+            image: curlimages/curl
+            command:
+              - /bin/sh
+              - -c
+              - |
+                curl -f http://fitness-tracker-service/health || exit 1
+                echo "Health check successful"

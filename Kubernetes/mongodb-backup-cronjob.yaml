@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mongodb-backup
+spec:
+  schedule: "0 2 * * *"   # Everyday at 2 AM
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 2
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: mongodb-backup
+            image: mongo:6
+            command:
+              - /bin/sh
+              - -c
+              - |
+                mongodump --uri="mongodb://mongodb-service:27017/fitness-tracker" \
+                --archive=/backup/fitness_$(date +%F).gz --gzip
+                echo "Backup completed"
