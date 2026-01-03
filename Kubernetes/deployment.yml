@@ -1,7 +1,7 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name: flipkart-app-rs 
+  name: flipkart-app-deployment
 spec: # Defined the behaviour of the replicaset 
   replicas: 3
   selector: 
