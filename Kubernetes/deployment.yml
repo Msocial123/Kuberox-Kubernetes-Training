@@ -16,5 +16,18 @@ spec: # Defined the behaviour of the replicaset
         - name: flip-cont 
           image: muralisocial123/transaction-app:v1.0.0
           ports: 
-            - containerPort: 8080   
+            - containerPort: 8080
+--- 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: flipkart-svc 
+spec: 
+  selector: 
+    web: flip 
+  ports: 
+    - protocol: TCP 
+      port: 8081 # Service Port - Host Port 
+      targetPort: 8080  # Target Port or ContainerPort
+  type: ClusterIP                        
 
