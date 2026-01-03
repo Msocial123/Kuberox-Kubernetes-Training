@@ -1,8 +1,7 @@
 apiVersion: v1 
 kind: Pod 
 metadata: 
-  name: flipkart-clone-pod 
-  namespace: kuberox-ns
+  name: flipkart-clone-pod
 spec:
   containers:
     - name: flip-cont 
