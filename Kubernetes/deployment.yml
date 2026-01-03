@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: flipkart-app-rs 
+spec: # Defined the behaviour of the replicaset 
+  replicas: 3
+  selector: 
+    matchLabels:
+      web: flip
+  template: # Pod Defination 
+    metadata: 
+      labels: 
+        web: flip 
+    spec: 
+      containers:
+        - name: flip-cont 
+          image: muralisocial123/flipkart-clone-kuberox:v1.1.0 
+          ports: 
+            - containerPort: 80    
+
