@@ -44,3 +44,36 @@
   431  kubectl get pods -o wide
   432  kubectl exec -it flipkart-clone-pod -- /bin/sh
   433  kubectl exec -it flipkart-clone-pod -c trans-cont -- /bin/sh
+  434  history
+  435  clear
+  436  kubectl get pods
+  437  kubectl delete pod flipkart-clone-pod
+  438  kubectl get pods
+  439  ls
+  440  git pull
+  441  ls
+  442  kubectl apply -f rs.yml
+  443  clear
+  444  kubectl get rs
+  445  kubectl get pods
+  446  kubectl get pods -o wide
+  447  kubectl delete pod flipkart-app-rs-v5dhf
+  448  kubectl get pods
+  449  kubectl get pods -o wide
+  450  git pull
+  451  kubectl apply -f deployment.yml
+  452  kubectl get deployments
+  453  kubectl get rs
+  454  kubectl get pods
+  455  kubectl get pods -o wide
+  456  kubectl get deployments -o wide
+  457  git pull
+  458  kubectl apply -f deployment.yml
+  459  kubectl get pods -o wide
+  460  kubectl get pods -w
+  461  kubectl get pods
+  462  kubectl get rs
+  463  kubectl get pods
+  464  kubectl get deployments -o wide
+  465  kubectl get events --sort-by=.metadata.creationTimestamp
+
