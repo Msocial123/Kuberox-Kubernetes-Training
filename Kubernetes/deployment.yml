@@ -29,5 +29,5 @@ spec:
     - protocol: TCP 
       port: 8081 # Service Port - Host Port 
       targetPort: 8080  # Target Port or ContainerPort
-  type: ClusterIP                        
+  type: NodePort                        
 
