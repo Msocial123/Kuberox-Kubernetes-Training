@@ -30,6 +30,6 @@ spec:
     web: flip
   ports:
     - name: http
-      port: 80            # Port exposed on Load Balancer
-      targetPort: 81      # Container Port
+      port: 81            # Port exposed on Load Balancer
+      targetPort: 80      # Container Port
 
