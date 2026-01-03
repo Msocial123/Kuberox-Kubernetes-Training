@@ -31,5 +31,5 @@ spec:
   ports:
     - name: http
       port: 80            # Port exposed on Load Balancer
-      targetPort: 80      # Container Port
+      targetPort: 81      # Container Port
 
