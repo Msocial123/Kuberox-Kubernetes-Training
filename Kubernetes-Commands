@@ -1,0 +1,46 @@
+ 388  kubectl apply -f ns.yaml
+  389  kubectl get ns
+  390  git pull
+  391  kubectl apply -f pod.yml
+  392  kubectl get pods -o wide
+  393  kubectl describe pod flipkart-clone-pod
+  394  git pull
+  395  kubectl apply -f pod.yml
+  396  kubectl get pods
+  397  kubectl get pods -n kuberox-ns
+  398  kubectl describe pod flipkart-clone-pod -n kuberox-ns
+  399  sudo su
+  400  kubectl get nodes
+  401  kubectl get pods
+  402  kubectl get pods -n kuberox-ns
+  403  clear
+  404  kubectl get pods
+  405  kubectl exec -it flipkart-clone-pod -- /bin/sh
+  406  kubectl exec -it flipkart-clone-pod -- /bin/bash
+  407  kubectl exec -it flipkart-clone-pod -- ls
+  408  kubectl get pods -o wide
+  409  kubectl exec -it flipkart-clone-pod -- /bin/sh
+  410  ls
+  411  cd Kuberox-Kubernetes-Training/
+  412  ls
+  413  git pull
+  414  ls
+  415  cd Kubernetes/
+  416  clear
+  417  ls
+  418  kubectl get pods
+  419  kubectl delete pod flipkart-clone-pod
+  420  ls
+  421  git pull
+  422  kubectl apply -f pod.yaml
+  423  kubectl apply -f pod.yml
+  424  ls
+  425  kubectl get pods
+  426  git pull
+  427  kubectl apply -f pod.yml
+  428  kubectl get pods
+  429  kubectl get pods -w
+  430  kubectl get pods
+  431  kubectl get pods -o wide
+  432  kubectl exec -it flipkart-clone-pod -- /bin/sh
+  433  kubectl exec -it flipkart-clone-pod -c trans-cont -- /bin/sh
