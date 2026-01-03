@@ -1,0 +1,110 @@
+step1: 
+Install NFS Server (On Linux Storage Node)
+Run on one node (recommended: master or dedicated storage VM):
+sudo apt update
+sudo apt install -y nfs-kernel-server
+Step2 : 
+Create a 10GB disk directory:
+sudo mkdir -p /mnt/nfs/fitness-data
+sudo chown -R nobody:nogroup /mnt/nfs
+sudo chmod -R 777 /mnt/nfs
+Step3:
+sudo nano /etc/exports
+Add the below line into this file : 
+/mnt/nfs/fitness-data *(rw,sync,no_subtree_check,no_root_squash)
+Save and Exit : 
+---------------------------------------------------------------------------
+Step4: 
+sudo exportfs -rav
+sudo systemctl restart nfs-kernel-server
+showmount -e
+--------------------------------------------------------------------------
+Step5: 
+Install NFS client on all Kubernetes Nodes:
+sudo apt install -y nfs-common
+-------------------------------------------------------------------------------
+storageclass.yaml 
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-static
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+--------------------------------------------------------
+PersistentVolume (10GB NFS)
+pv.yml 
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: fitness-nfs-pv
+spec:
+  storageClassName: nfs-static
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 190.170.20.235
+    path: /mnt/nfs/fitness-data
+
+-----------------------------------------------------------------
+
+PersistentVolumeClaim:
+pvc.yaml 
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fitness-pvc
+spec:
+  storageClassName: nfs-static
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+----------------------------------------------------------------------
+pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fitness-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: fitness-volume
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: fitness-volume
+    persistentVolumeClaim:
+      claimName: fitness-pvc
+------------------------------------------------------------------
+Flow to execute 
+
+kubectl apply -f storageclass.yaml
+kubectl apply -f pv.yaml
+kubectl apply -f pvc.yaml
+kubectl apply -f pod.yaml
+
+--------------------------------------------------------------------------
+
+kubectl get pv
+kubectl get pvc
+kubectl describe pv
+kubectl describe pvc
+kubectl exec -it fitness-pod -- df -h
+
+-----------------------------------------------------------------
+Test Data Persistence
+
+
+
+
+
+
